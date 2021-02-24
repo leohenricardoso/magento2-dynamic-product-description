@@ -1,0 +1,20 @@
+{
+    "name": "leonardo-henrique/dynamic-product-description",
+    "description": "Módulo de método de pagamento com pagar.me",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "LeonardoHenrique\\DynamicProductDescription\\": ""
+        }
+    },
+    "require": {
+        "leonardo-henrique/core": "dev-main",
+        "magento/product-community-edition": ">=2.3.5"
+    },
+    "repositories": {},
+    "version": "1.0.0"
+}

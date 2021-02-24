@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Leonardo Henrique Cardoso
+ * @copyright Copyright (c) 2021 Leonardo Henrique Cardoso (https://leohenrique.me)
+ * @package LeonardoHenrique_DynamicProductDescription
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="dynamic_product_description_config" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Dynamic Product Description</label>
+            <tab>leonardo_henrique</tab>
+            <resource>LeonardoHenrique_DynamicProductDescription::dynamic_product_description_resource</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Necessary for enable module.</comment>
+                </field>
+            </group>
+            <group id="frontend_settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Frontend settings</label>
+                <field id="active_element_name" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable dynamic name</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="element_id_name" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Element id for name</label>
+                    <comment>Example: [data-ui-id="page-title-wrapper"]</comment>
+                    <depends>
+                        <field id="dynamic_content_config/frontend_settings/active_element_name">1</field>
+                    </depends>
+                </field>
+
+                <field id="active_element_description" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable dynamic description</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="element_id_description" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Element id for description</label>
+                    <comment>Example: [data-role="content"] .description .value</comment>
+                    <depends>
+                        <field id="dynamic_content_config/frontend_settings/active_element_description">1</field>
+                    </depends>
+                </field>
+
+                <field id="active_element_short_description" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable dynamic short description</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="element_id_short_description" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Element id for short description</label>
+                    <comment>Example: [data-role="content"] .description .value</comment>
+                    <depends>
+                        <field id="dynamic_content_config/frontend_settings/element_id_short_description">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

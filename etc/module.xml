@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Leonardo Henrique Cardoso
+ * @copyright Copyright (c) 2021 Leonardo Henrique Cardoso (https://leohenrique.me)
+ * @package LeonardoHenrique_DynamicProductDescription
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="LeonardoHenrique_DynamicProductDescription" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Swatches"/>
+        </sequence>
+    </module>
+</config>
