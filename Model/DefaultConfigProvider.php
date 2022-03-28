@@ -2,50 +2,55 @@
 
 /**
  * @author Leonardo Henrique Cardoso
- * @copyright Copyright (c) 2021 Leonardo Henrique Cardoso (https://leohenrique.me)
+ * @copyright Copyright (c) 2021 Leonardo Henrique Cardoso
  * @package LeonardoHenrique_DynamicProductDescription
  */
 
 namespace LeonardoHenrique\DynamicProductDescription\Model;
 
-use LeonardoHenrique\DynamicProductDescription\Helper\ConfigPaths;
-use LeonardoHenrique\Core\Helper\Utils;
+use LeonardoHenrique\DynamicProductDescription\Helper\Config as ConfigHelper;
 
 /**
- * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
- * @SuppressWarnings(PHPMD.TooManyFields)
+ *
  */
 class DefaultConfigProvider implements ConfigProviderInterface
 {
 
-    protected $utils;
+    /**
+     * @var ConfigHelper
+     */
+    protected $configHelper;
 
+    /**
+     * @param ConfigHelper $configHelper
+     */
     public function __construct(
-        Utils $utils
-    ) {
-        $this->utils = $utils;
+        ConfigHelper $configHelper
+    )
+    {
+        $this->configHelper = $configHelper;
     }
 
     /**
-     * {@inheritdoc}
+     * @return array
      */
-    public function getConfig()
+    public function getConfig(): array
     {
         return [
-            'module_enable' => $this->utils
-                ->getConfigValue(ConfigPaths::ENABLED) == '1',
-            'element_name' => $this->utils
-                ->getConfigValue(ConfigPaths::ELEMENT_NAME),
-            'element_name_enable' => $this->utils
-                ->getConfigValue(ConfigPaths::ELEMENT_NAME_ENABLE) == '1',
-            'element_description' => $this->utils
-                ->getConfigValue(ConfigPaths::ELEMENT_DESCRIPTION),
-            'element_description_enable' => $this->utils
-                ->getConfigValue(ConfigPaths::ELEMENT_DESCRIPTION_ENABLE) == '1',
-            'element_short_description' => $this->utils
-                ->getConfigValue(ConfigPaths::ELEMENT_SHORT_DESCRIPTION),
-            'element_short_description_enable' => $this->utils
-                ->getConfigValue(ConfigPaths::ELEMENT_SHORT_DESCRIPTION_ENABLE) == '1',
+            'module_enable' => $this->configHelper
+                    ->getConfigValue(ConfigHelper::ENABLED) == '1',
+            'element_name' => $this->configHelper
+                ->getConfigValue(ConfigHelper::ELEMENT_NAME),
+            'element_name_enable' => $this->configHelper
+                    ->getConfigValue(ConfigHelper::ELEMENT_NAME_ENABLE) == '1',
+            'element_description' => $this->configHelper
+                ->getConfigValue(ConfigHelper::ELEMENT_DESCRIPTION),
+            'element_description_enable' => $this->configHelper
+                    ->getConfigValue(ConfigHelper::ELEMENT_DESCRIPTION_ENABLE) == '1',
+            'element_short_description' => $this->configHelper
+                ->getConfigValue(ConfigHelper::ELEMENT_SHORT_DESCRIPTION),
+            'element_short_description_enable' => $this->configHelper
+                    ->getConfigValue(ConfigHelper::ELEMENT_SHORT_DESCRIPTION_ENABLE) == '1',
         ];
     }
 }

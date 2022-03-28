@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!--
-/**
- * @author Leonardo Henrique Cardoso
- * @copyright Copyright (c) 2021 Leonardo Henrique Cardoso (https://leohenrique.me)
- * @package LeonardoHenrique_DynamicProductDescription
- */
--->
+  ~ @author Leonardo Henrique Cardoso <leohenricardoso@gmail.com>
+  ~ @copyright Copyright (c) 2022 Leonardo Henrique Cardoso
+  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
+        <tab id="leonardo_henrique" translate="label" sortOrder="1">
+            <label>Leonardo Henrique</label>
+        </tab>
         <section id="dynamic_product_description_config" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Dynamic Product Description</label>

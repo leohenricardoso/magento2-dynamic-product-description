@@ -1,7 +1,7 @@
 <?php
 /**
  * @author Leonardo Henrique Cardoso
- * @copyright Copyright (c) 2021 Leonardo Henrique Cardoso (https://leohenrique.me)
+ * @copyright Copyright (c) 2021 Leonardo Henrique Cardoso
  * @package LeonardoHenrique_DynamicProductDescription
  */
 \Magento\Framework\Component\ComponentRegistrar::register(

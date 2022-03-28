@@ -1,8 +1,14 @@
 {
     "name": "leonardo-henrique/dynamic-product-description",
-    "description": "Módulo de método de pagamento com pagar.me",
+    "description": "",
     "type": "magento2-module",
     "license": "proprietary",
+    "authors": [
+        {
+            "name": "Leonardo Henrique Cardoso",
+            "email": "leohenricardoso@gmail.com"
+        }
+    ],
     "autoload": {
         "files": [
             "registration.php"
@@ -12,7 +18,6 @@
         }
     },
     "require": {
-        "leonardo-henrique/core": "dev-main",
         "magento/product-community-edition": ">=2.3.5"
     },
     "repositories": {},
