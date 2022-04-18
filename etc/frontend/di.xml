@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ @author Leonardo Henrique Cardoso
+  ~ @author Leonardo Henrique Cardoso <leohenricardoso@gmail.com>
   ~ @copyright Copyright (c) 2022 Leonardo Henrique Cardoso
   -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">

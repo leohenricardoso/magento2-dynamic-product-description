@@ -1,43 +1,75 @@
 <?php
 /**
- * @author Leonardo Henrique Cardoso
- * @copyright Copyright (c) 2021 Leonardo Henrique Cardoso (https://leohenrique.me)
+ * @author Leonardo Henrique Cardoso <leohenricardoso@gmail.com>
+ * @copyright Copyright (c) 2020 Leonardo Henrique Cardoso
  * @package LeonardoHenrique_DynamicProductDescription
  */
+
 namespace LeonardoHenrique\DynamicProductDescription\Block\ConfigurableProduct\Product\View\Type;
 
 use Magento\Framework\Json\EncoderInterface;
 use Magento\Framework\Json\DecoderInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\ConfigurableProduct\Block\Product\View\Type\Configurable as ConfigurableType;
-use LeonardoHenrique\Core\Helper\Logger;
+use LeonardoHenrique\DynamicProductDescription\Helper\Logger;
 
+/**
+ *
+ */
 class Configurable
 {
+    /**
+     * @var EncoderInterface
+     */
     protected $jsonEncoder;
+
+    /**
+     * @var DecoderInterface
+     */
     protected $jsonDecoder;
+
+    /**
+     * @var ProductRepositoryInterface
+     */
     protected $productRepository;
 
+    /**
+     * @param ProductRepositoryInterface $productRepository
+     * @param EncoderInterface $jsonEncoder
+     * @param DecoderInterface $jsonDecoder
+     */
     public function __construct(
         ProductRepositoryInterface $productRepository,
-        EncoderInterface $jsonEncoder,
-        DecoderInterface $jsonDecoder
-    ) {
+        EncoderInterface           $jsonEncoder,
+        DecoderInterface           $jsonDecoder
+    )
+    {
         $this->jsonDecoder = $jsonDecoder;
         $this->jsonEncoder = $jsonEncoder;
         $this->productRepository = $productRepository;
     }
 
+    /**
+     * @param $id
+     * @return \Magento\Catalog\Api\Data\ProductInterface
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function getProductById($id)
     {
         return $this->productRepository->getById($id);
     }
 
+    /**
+     * @param ConfigurableType $subject
+     * @param \Closure $proceed
+     * @return string
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function aroundGetJsonConfig(
         ConfigurableType $subject,
-        \Closure $proceed
-    ) {
-
+        \Closure         $proceed
+    )
+    {
         try {
             $name = [];
             $description = [];
@@ -59,7 +91,7 @@ class Configurable
 
             return $this->jsonEncoder->encode($config);
         } catch (\Exception $e) {
-            Logger::execute(self::class, $e->getMessage(), 'err');
+            Logger::info(self::class . ' => ' . $e->getMessage(), 'exception');
             throw $e;
         }
     }

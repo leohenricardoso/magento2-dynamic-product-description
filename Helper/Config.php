@@ -1,11 +1,9 @@
 <?php
-
 /**
- * @author Leonardo Henrique Cardoso
- * @copyright Copyright (c) 2021 Leonardo Henrique Cardoso
+ * @author Leonardo Henrique Cardoso <leohenricardoso@gmail.com>
+ * @copyright Copyright (c) 2020 Leonardo Henrique Cardoso
  * @package LeonardoHenrique_DynamicProductDescription
  */
-
 namespace LeonardoHenrique\DynamicProductDescription\Helper;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;

@@ -1,7 +1,7 @@
 <?php
 /**
- * @author Leonardo Henrique Cardoso
- * @copyright Copyright (c) 2021 Leonardo Henrique Cardoso (https://leohenrique.me)
+ * @author Leonardo Henrique Cardoso <leohenricardoso@gmail.com>
+ * @copyright Copyright (c) 2020 Leonardo Henrique Cardoso
  * @package LeonardoHenrique_DynamicProductDescription
  */
 namespace LeonardoHenrique\DynamicProductDescription\Model;
