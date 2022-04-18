@@ -18,7 +18,7 @@
         }
     },
     "require": {
-        "magento/product-community-edition": ">=2.3.5"
+        "magento/product-community-edition": ">=2.4.1"
     },
     "repositories": {},
     "version": "1.0.0"

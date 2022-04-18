@@ -17,8 +17,11 @@ define([
             var $parent = $this.parents('.' + $widget.options.classes.attributeClass),
                 $wrapper = $this.parents('.' + $widget.options.classes.attributeOptionsWrapper),
                 $label = $parent.find('.' + $widget.options.classes.attributeSelectedOptionLabelClass),
-                attributeId = $parent.attr('attribute-id'),
-                $input = $parent.find('.' + $widget.options.classes.attributeInput);
+                attributeId = $parent.data('attribute-id'),
+                $input = $parent.find('.' + $widget.options.classes.attributeInput),
+                checkAdditionalData = JSON.parse(this.options.jsonSwatchConfig[attributeId]['additional_data']),
+                $priceBox = $widget.element.parents($widget.options.selectorProduct)
+                    .find(this.options.selectorProductPrice);
 
             if ($widget.inProductList) {
                 $input = $widget.productForm.find(
@@ -31,14 +34,14 @@ define([
             }
 
             if ($this.hasClass('selected')) {
-                $parent.removeAttr('option-selected').find('.selected').removeClass('selected');
+                $parent.removeAttr('data-option-selected').find('.selected').removeClass('selected');
                 $input.val('');
                 $label.text('');
                 $this.attr('aria-checked', false);
             } else {
-                $parent.attr('option-selected', $this.attr('option-id')).find('.selected').removeClass('selected');
-                $label.text($this.attr('option-label'));
-                $input.val($this.attr('option-id'));
+                $parent.attr('data-option-selected', $this.data('option-id')).find('.selected').removeClass('selected');
+                $label.text($this.data('option-label'));
+                $input.val($this.data('option-id'));
                 $input.attr('data-attr-name', this._getAttributeCodeById(attributeId));
                 $this.addClass('selected');
                 $widget._toggleCheckedAttributes($this, $wrapper);
@@ -59,30 +62,52 @@ define([
                 var element_short_description = window.globalConfigData['element_short_description'];
                 var element_short_description_enable = window.globalConfigData['element_short_description_enable'];
 
-                if (element_name_enable && name != '' && element_name != '') {
+                if (
+                    element_name_enable &&
+                    name &&
+                    name != '' &&
+                    element_name != ''
+                ) {
                     $(element_name).html(name);
                 }
 
-                if (element_description_enable && description != '' && element_description != '') {
+                if (
+                    element_description_enable &&
+                    description &&
+                    description != ''
+                    && element_description != ''
+                ) {
                     $(element_description).html(description);
                 }
 
-                if (element_short_description_enable && short_description != '' && element_short_description != '') {
+                if (
+                    element_short_description_enable &&
+                    short_description &&
+                    short_description != '' &&
+                    element_short_description != ''
+                ) {
                     $(element_short_description).html(short_description);
                 }
             }
             // Custom code ends
 
-            if ($widget.element.parents($widget.options.selectorProduct)
-                .find(this.options.selectorProductPrice).is(':data(mage-priceBox)')
-            ) {
+            if ($priceBox.is(':data(mage-priceBox)')) {
                 $widget._UpdatePrice();
             }
 
-            $widget._loadMedia();
-            $input.trigger('change');
-        }
+            $(document).trigger('updateMsrpPriceBlock',
+                [
+                    this._getSelectedOptionPriceIndex(),
+                    $widget.options.jsonConfig.optionPrices,
+                    $priceBox
+                ]);
 
+            if (parseInt(checkAdditionalData['update_product_preview_image'], 10) === 1) {
+                $widget._loadMedia();
+            }
+
+            $input.trigger('change');
+        },
     });
 
     return $.dynamicProductDescription.SwatchRenderer;

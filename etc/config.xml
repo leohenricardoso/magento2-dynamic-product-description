@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <dynamic_product_description_config>
+            <general>
+                <active>0</active>
+            </general>
+            <frontend_settings>
+                <active_element_name>1</active_element_name>
+                <element_id_name>[data-ui-id="page-title-wrapper"]</element_id_name>
+                <active_element_description>1</active_element_description>
+                <element_id_description>[data-role="content"] .description .value</element_id_description>
+                <active_element_short_description>1</active_element_short_description>
+                <element_id_short_description>[itemprop="description"]</element_id_short_description>
+            </frontend_settings>
+        </dynamic_product_description_config>
+    </default>
+</config>

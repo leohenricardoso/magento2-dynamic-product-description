@@ -35,20 +35,20 @@ class DefaultConfigProvider implements ConfigProviderInterface
     public function getConfig(): array
     {
         return [
-            'module_enable' => $this->configHelper
-                    ->getConfigValue(ConfigHelper::ENABLED) == '1',
+            'module_enable' => (bool) $this->configHelper
+                    ->getConfigValue(ConfigHelper::ENABLED),
             'element_name' => $this->configHelper
                 ->getConfigValue(ConfigHelper::ELEMENT_NAME),
-            'element_name_enable' => $this->configHelper
-                    ->getConfigValue(ConfigHelper::ELEMENT_NAME_ENABLE) == '1',
+            'element_name_enable' => (bool) $this->configHelper
+                    ->getConfigValue(ConfigHelper::ELEMENT_NAME_ENABLE),
             'element_description' => $this->configHelper
                 ->getConfigValue(ConfigHelper::ELEMENT_DESCRIPTION),
-            'element_description_enable' => $this->configHelper
-                    ->getConfigValue(ConfigHelper::ELEMENT_DESCRIPTION_ENABLE) == '1',
+            'element_description_enable' => (bool) $this->configHelper
+                    ->getConfigValue(ConfigHelper::ELEMENT_DESCRIPTION_ENABLE),
             'element_short_description' => $this->configHelper
                 ->getConfigValue(ConfigHelper::ELEMENT_SHORT_DESCRIPTION),
-            'element_short_description_enable' => $this->configHelper
-                    ->getConfigValue(ConfigHelper::ELEMENT_SHORT_DESCRIPTION_ENABLE) == '1',
+            'element_short_description_enable' => (bool) $this->configHelper
+                    ->getConfigValue(ConfigHelper::ELEMENT_SHORT_DESCRIPTION_ENABLE),
         ];
     }
 }
