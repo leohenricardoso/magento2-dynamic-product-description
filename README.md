@@ -23,13 +23,19 @@ Ao selecionar as configurações respectivas ao produto simples que configuramos
 Para acessar as configurações disponíveis nesse módulo, é preciso acessar: Stores -> Configuration -> Leonardo Henrique -> Dynamic Product Description.
 ![settings-module](https://user-images.githubusercontent.com/43687466/218550785-98833bf4-b0db-4ace-8ab9-1c02856fa24a.png)
 
-#### 1 - Ativa ou desativa o módulo
-#### 2 - Ativa a funcionalidade de tornar dinâmico (NOME)
-#### 3 - Seletor unico do elemento na Página do produto que recebe o valor desejado (NOME)
-#### 4 - Ativa a funcionalidade de tornar dinâmico (DESCRIÇÂO)
-#### 5 - Seletor unico do elemento na Página do produto que recebe o valor desejado (DESCRIÇÂO)
-#### 6 - Ativa a funcionalidade de tornar dinâmico (DESCRIÇÂO CURTA)
-#### 7 - Seletor unico do elemento na Página do produto que recebe o valor desejado (DESCRIÇÂO CURTA)
+1 - Ativa ou desativa o módulo
+
+2 - Ativa a funcionalidade de tornar dinâmico (NOME)
+
+3 - Seletor unico do elemento na Página do produto que recebe o valor desejado (NOME)
+
+4 - Ativa a funcionalidade de tornar dinâmico (DESCRIÇÂO)
+
+5 - Seletor unico do elemento na Página do produto que recebe o valor desejado (DESCRIÇÂO)
+
+6 - Ativa a funcionalidade de tornar dinâmico (DESCRIÇÂO CURTA)
+
+7 - Seletor unico do elemento na Página do produto que recebe o valor desejado (DESCRIÇÂO CURTA)
 
 ### Como obter o seletor unico para configurar corretamente
 Vamos usar por exemplo o campo da descrição para obter o seletor que deve ser configurado no admin.
