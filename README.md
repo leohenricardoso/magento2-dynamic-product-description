@@ -47,6 +47,6 @@ Obs: Caso o tema for personalizado, pode ser colocado um id em cada um desses ca
 2 - Verificar se o elemento possui id declarado ou não, caso tenha o id declarado, pode ser configurado dessa forma (#id_do_elemento), caso o elemento não tenha id,
 podemos identificar ele através de outros atributos do elemento (Deve ser identificado de forma que seja unico na página).
 
-3 - Na screenshot a seguir mostra como obtive o seletor unico do elemento que recebe a descrição.
+3 - Na screenshot a seguir mostra como obtive o seletor unico do elemento que recebe a descrição. Nesse caso do tema padrão Luma ficou assim: [data-role="content"] .description .value
 ![inspect-element-selector](https://user-images.githubusercontent.com/43687466/218550877-146a4eca-c34a-4838-a123-0b7f61342a99.png)
 
